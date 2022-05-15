@@ -13,7 +13,7 @@ span.cap {
 
 .slideshow-container,
 .navigation,
-.test {
+.slider {
     grid-area: 1/2;
 }
 
@@ -25,7 +25,7 @@ span.cap {
     margin-bottom: 0.5rem;
 }
 
-.test {
+.slider {
     display: flex;
     align-items: center;
     width: 86%;
@@ -98,19 +98,19 @@ span.cap {
     background-color: lightgrey;
 }
 
-#slide1:target ~ .test .slideshow-container {
+#slide1:target ~ .slider .slideshow-container {
     transform: translateX(0%);
     transition: .5s;
 }
-#slide2:target ~ .test .slideshow-container {
+#slide2:target ~ .slider .slideshow-container {
     transform: translateX(-100%);
     transition: .5s;
 }
-#slide3:target ~ .test .slideshow-container {
+#slide3:target ~ .slider .slideshow-container {
     transform: translateX(-200%);
     transition: .5s;
 }
-#slide4:target ~ .test .slideshow-container {
+#slide4:target ~ .slider .slideshow-container {
     transform: translateX(-300%);
     transition: .5s;
 }
