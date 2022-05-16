@@ -1,0 +1,145 @@
+span.cap {
+    display:none;
+}
+
+.wrapper {
+    position: relative;
+    width: 90%;
+    display: grid;
+    max-width: 113.6vh;
+    margin: 0 auto;
+    background-color: lightgrey;
+}
+
+.slideshow-container,
+.navigation,
+.slider {
+    grid-area: 1/2;
+}
+
+.navigation {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-right: 6%;
+    margin-bottom: 0.5rem;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    width: 86%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slideshow-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-right: 2rem;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    flex-flow: row nowrap;
+    margin: 0 auto;
+}
+
+.slide {
+    scroll-snap-align: start; 
+    flex-shrink: 0; 
+    transform-origin: center center;
+    transition: transform 0.5s;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.slide-image {
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-text {
+    margin-bottom: 1rem;
+    background-color: lightgray;
+}
+
+.circle {
+    border-radius: 50%;
+    display: inline-flex; 
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid #bbb;
+    background-color: #bbb;
+    transition: background-color 0.6s ease;
+}
+
+.dot{
+    display: inline-block;
+    padding: 5px;
+    cursor: pointer;
+    width: 2rem;
+    height: 2rem;
+    z-index: 10;
+    background-color: lightgray;
+}
+
+.dot:hover .circle{
+    border: 2px solid #717171;
+    background-color: #717171;
+}
+
+.dot:active .circle {
+    border: 2px solid #717171;
+    background-color: lightgrey;
+}
+
+#slide1:target ~ .slider .slideshow-container {
+    transform: translateX(0%);
+    transition: .5s;
+}
+#slide2:target ~ .slider .slideshow-container {
+    transform: translateX(-100%);
+    transition: .5s;
+}
+#slide3:target ~ .slider .slideshow-container {
+    transform: translateX(-200%);
+    transition: .5s;
+}
+#slide4:target ~ .slider .slideshow-container {
+    transform: translateX(-300%);
+    transition: .5s;
+}
+
+#slide1:target ~ .navigation .circle1,
+#slide2:target ~ .navigation .circle2,
+#slide3:target ~ .navigation .circle3,
+#slide4:target ~ .navigation .circle4 {
+    background-color: transparent;
+}
+
+@media screen and (max-width: 500px){
+    .navigation {
+        justify-content: center;
+        margin-bottom: 2.2rem;
+        margin-right: 0%;
+    }
+
+    .slide {
+        align-items: center;
+    }
+
+    .slide-image {
+        margin-bottom: 2rem;
+    }
+
+    .slide-text {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+}
